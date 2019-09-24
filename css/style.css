@@ -1,7 +1,7 @@
 body{
     font-family: 'Livvic', sans-serif;
     font-size: 18px;
-    color: #404040;
+    color: #4939399a;
     }
     
     .wrapper{
@@ -10,11 +10,13 @@ body{
     .heading{
         display: grid;
         grid-template-columns: 1fr 1fr;
+        color: #000;
     }
     
     .fontawesome{
         font-size: 40px;
         padding: 0 10px;
+        color: #000;
     }
     
     .contacts{
@@ -32,7 +34,21 @@ body{
     }
     
     .titles{
-        color: #4040409a;
+        color: #000;
         font-size: 30px;
-        margin-top: 20px;
+        margin: 20px 0;
+        font-weight: bold;
+    }
+
+    .link{
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .info__container{
+        display: grid;
+        grid-template-columns: 20% 80%;    }
+
+    .info__main{
+        font-size: 25px;
     }
