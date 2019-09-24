@@ -1,5 +1,38 @@
 body{
-font-family: 'Livvic', sans-serif;
-font-size: 18px;
-color: #404040;
-}
+    font-family: 'Livvic', sans-serif;
+    font-size: 18px;
+    color: #404040;
+    }
+    
+    .wrapper{
+        margin: 0 40px 0 40px;
+    }
+    .heading{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .fontawesome{
+        font-size: 40px;
+        padding: 0 10px;
+    }
+    
+    .contacts{
+        display: grid;
+        grid-template-rows: min-content;
+        justify-content: end;
+    }
+    
+    .icons{
+        margin-block-start: 24.12px;
+        margin-block-end: 8px;
+        display: flex;
+        justify-content: flex-end;
+        height: 45px;
+    }
+    
+    .titles{
+        color: #4040409a;
+        font-size: 30px;
+        margin-top: 20px;
+    }
