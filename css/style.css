@@ -40,8 +40,9 @@ body {
 .icons {
   margin-block-start: 24.12px;
   margin-block-end: 8px;
-  display: flex;
-  justify-content: flex-end;
+  display: grid;
+  justify-content: end;
+  text-align: end;
   height: 45px;
 }
 
