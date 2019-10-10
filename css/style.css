@@ -153,6 +153,7 @@ ul {
 
     .icons{
         justify-content: flex-start;
+        text-align: start;
     }
 
     .fontawesome{
