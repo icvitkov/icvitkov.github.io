@@ -1,20 +1,18 @@
 body {
-  font-family: "Livvic", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 18px;
+  font-weight: 300;
   color: white;
-  background: #28272d;
+  background: #171a1a;
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
 .wrapper {
-  padding: 0 40px 0 40px;
+  padding: 40px 40px 0 40px;
 }
 
-.gradient{
-  background: linear-gradient(#5a5a5c, #28272d);
-}
 .heading {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -29,6 +27,10 @@ body {
 
 .personal__data{
     color: #cb3541;
+}
+
+.personal__data>h1 {
+  font-weight: 400;
 }
 
 .contacts {
@@ -50,7 +52,7 @@ body {
   color: #cb3541;
   font-size: 30px;
   margin: 20px 0;
-  font-weight: bold;
+  font-weight: 400;
   text-align: center;
 }
 
@@ -71,11 +73,26 @@ body {
   text-align: left;
 }
 
+.info__name {
+  display: grid;
+  align-content: center;
+}
 
 .profile{
     display: grid;
     width: 100%;
     justify-content: center;
+}
+.profile__grid {
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+.about__text {
+  width: 80%;
+}
+.left {
+  text-align: left;
 }
 .profile__avatar {
   height: 300px;
@@ -95,16 +112,25 @@ body {
 
 .about__me--grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 2%;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
   color: white;
   margin-top: 50px;
 }
 
+.about__me--rows {
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 20px;
+}
+
 .about__me--child {
-  background: #5a5a5c1f;
+  padding-top: 20px;
+  backdrop-filter: blur(2px);
+  background: #3535351f;
   display: grid;
   grid-template-rows: 70px;
+  border-radius: 15px;
 }
 
 ul {
@@ -129,6 +155,7 @@ ul {
 
 .about__me--title{
     color: white;
+    font-weight: 300;
 }
 
 .info__description{
@@ -136,11 +163,23 @@ ul {
   border-left: #cb3541 2px solid;
 }
 
-/* On screens that are 600px wide or less, the background color is olive */
 @media screen and (max-width: 600px) {
     .about__me--grid{
         grid-template-columns: 1fr;
         row-gap: 10px;
+    }
+
+    .profile__grid {
+      padding-top: unset;
+      grid-template-columns: 1fr;
+    }
+    .about__text {
+      width: unset;
+      padding: 0 40px;
+    }
+
+    .left {
+      padding: 0 40px;
     }
 
     .heading{
