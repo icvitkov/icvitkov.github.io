@@ -1,63 +1,80 @@
-# Nuxt 3 Minimal Starter
+# icvitkov.github.io
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Personal GitHub Pages site built with Nuxt 3.
+
+## Requirements
+
+- **Node.js** `>=16.10.0` (or `^14.18.0`; recommended: Node 18 LTS)
+- **npm** `>=8`
+
+## Key dependencies
+
+| Package | Version |
+|---------|---------|
+| nuxt    | 3.6.5   |
+| vue     | 3.3.4   |
+| vite    | 4.4.7   |
 
 ## Setup
 
-Make sure to install the dependencies:
+Install dependencies:
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
 ```
 
-## Development Server
+## Development
 
-Start the development server on `http://localhost:3000`:
+Start the dev server at `http://localhost:3000`:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
 ```
 
-## Production
+## Deploying to GitHub Pages
 
-Build the application for production:
+This project uses [`gh-pages`](https://github.com/tschaub/gh-pages) to publish the static output to the `gh-pages` branch.
+
+### First-time setup
+
+1. Install `gh-pages` as a dev dependency:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
+npm install --save-dev gh-pages
 ```
 
-Locally preview production build:
+2. Add a `deploy` script to `package.json`:
+
+```json
+"scripts": {
+  "deploy": "nuxt generate && gh-pages -d .output/public"
+}
+```
+
+> Nuxt's `nuxt generate` outputs the static site to `.output/public` by default.
+
+3. Make sure **GitHub Pages** is configured to serve from the `gh-pages` branch in your repository settings (`Settings → Pages → Source: Deploy from a branch → gh-pages / root`).
+
+### Publishing changes
+
+Every time you want to push new changes live:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
+npm run deploy
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+This generates a fresh static build and force-pushes it to the `gh-pages` branch. The site is usually live within a minute or two.
+
+### Notes
+
+- The `gh-pages` branch is managed automatically — do not edit it manually.
+- All source changes should be committed to `main` (or your default branch) before deploying.
+- If your repo name is not `<username>.github.io`, set the base URL in `nuxt.config.ts`:
+
+```ts
+export default defineNuxtConfig({
+  app: {
+    baseURL: '/your-repo-name/'
+  }
+})
+```
